@@ -1,0 +1,711 @@
+openapi: 3.0.0
+info:
+  title: New Collection
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api/v1
+tags:
+  - name: VEHICLES
+  - name: FILMS
+  - name: PEOPLE
+  - name: PLANETS
+  - name: STARSHIPS
+  - name: SPECIES
+paths:
+  /vehicles/:
+    get:
+      tags:
+        - VEHICLES
+      summary: GetAll - VEHICLES
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/{vehiclesId}:
+    get:
+      tags:
+        - VEHICLES
+      summary: GetWithId - VEHICLES
+      parameters:
+        - name: vehiclesId
+          in: path
+          description: ID du véhicule
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ff0248fc4c1d12db92
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - VEHICLES
+      summary: Delete - VEHICLES
+      parameters:
+        - name: vehiclesId
+          in: path
+          description: ID du véhicule
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ff0248fc4c1d12db92
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/{idVehicles}:
+    put:
+      tags:
+        - VEHICLES
+      summary: Put - VEHICLES
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  vehicle_class: repulsorcrafteur
+                  pilots: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: vehiclesId
+          in: path
+          description: ID du véhicule
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ff0248fc4c1d12db92
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles:
+    post:
+      tags:
+        - VEHICLES
+      summary: Post - VEHICLES
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  vehicle_class: repulsorcrafteur
+                  pilots: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /films:
+    get:
+      tags:
+        - FILMS
+      summary: GetAll - FILMS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - FILMS
+      summary: Post - FILMS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  edited: '2014-12-20T20:58:18.411Z'
+                  climate: arid
+                  surface_water: '1'
+                  name: Tatooine
+                  diameter: '10465'
+                  rotation_period: '23'
+                  created: '2014-12-09T13:50:49.641Z'
+                  terrain: desert
+                  gravity: 1 standard
+                  orbital_period: '304'
+                  population: '200000'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /films/{filmsId}:
+    get:
+      tags:
+        - FILMS
+      summary: GetWithId - FILMS
+      parameters:
+        - name: filmsId
+          in: path
+          description: ID du films
+          required: true
+          schema:
+            type: string
+          example: 63c7b4740248fc4c1d12daad
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - FILMS
+      summary: Put - FILMS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  starships:
+                    - 2
+                    - 3
+                    - 5
+                    - 9
+                    - 10
+                    - 11
+                    - 12
+                    - 13
+                  edited: '2014-12-20T19:49:45.256Z'
+                  vehicles:
+                    - 4
+                    - 6
+                    - 7
+                    - 8
+                  planets:
+                    - 1
+                    - 2
+                    - 3
+                  producer: Gary Kurtz, Rick McCallum
+                  title: A New Hope
+                  created: '2014-12-10T14:23:31.880Z'
+                  episode_id: 4
+                  director: George Lucas
+                  release_date: '1977-05-25T00:00:00.000Z'
+                  opening_crawl: "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy...."
+                  characters:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    - 6
+                    - 7
+                    - 8
+                    - 9
+                    - 10
+                    - 12
+                    - 13
+                    - 14
+                    - 15
+                    - 16
+                    - 18
+                    - 19
+                    - 81
+                  species:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: filmsId
+          in: path
+          description: ID du films
+          required: true
+          schema:
+            type: string
+          example: 63c7b4740248fc4c1d12daad
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - FILMS
+      summary: Delete - FILMS
+      parameters:
+        - name: filmsId
+          in: path
+          description: ID du films
+          required: true
+          schema:
+            type: string
+          example: 63c7b4740248fc4c1d12daad
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /people:
+    get:
+      tags:
+        - PEOPLE
+      summary: GetAll - PEOPLE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - PEOPLE
+      summary: Post - PEOPLE
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  edited: '2014-12-20T21:17:56.891Z'
+                  name: Luke Skywalkerr
+                  created: '2014-12-09T13:50:51.644Z'
+                  gender: male
+                  skin_color: fair
+                  hair_color: blond
+                  height: '172'
+                  eye_color: blue
+                  mass: '77'
+                  homeworld: 1
+                  birth_year: 19BBY
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /people/{peopleId}:
+    get:
+      tags:
+        - PEOPLE
+      summary: GetWithId - PEOPLE
+      parameters:
+        - name: peopleId
+          in: path
+          description: ID du personnage
+          required: true
+          schema:
+            type: string
+          example: 63c7b4740248fc4c1d12daad
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - PEOPLE
+      summary: Put - PEOPLE
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  edited: '2014-12-20T21:17:56.891Z'
+                  name: Luke Skywalkerr
+                  created: '2014-12-09T13:50:51.644Z'
+                  gender: male
+                  skin_color: fair
+                  hair_color: blond
+                  height: '172'
+                  eye_color: blue
+                  mass: '77'
+                  homeworld: 1
+                  birth_year: 19BBY
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: peopleId
+          in: path
+          description: ID du personnage
+          required: true
+          schema:
+            type: string
+          example: 63c7b41a0248fc4c1d12da59
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - PEOPLE
+      summary: Delete - PEOPLE
+      parameters:
+        - name: peopleId
+          in: path
+          description: ID du personnage
+          required: true
+          schema:
+            type: string
+          example: 63c7b41a0248fc4c1d12da59
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /planets:
+    get:
+      tags:
+        - PLANETS
+      summary: GetAll - PLANETS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - PLANETS
+      summary: Post - PLANETS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  edited: '2014-12-20T20:58:18.411Z'
+                  climate: arid
+                  surface_water: '1'
+                  name: Tatooine
+                  diameter: '10465'
+                  rotation_period: '23'
+                  created: '2014-12-09T13:50:49.641Z'
+                  terrain: desert
+                  gravity: 1 standard
+                  orbital_period: '304'
+                  population: '200000'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: { }
+  /planets/{planetsId}:
+    get:
+      tags:
+        - PLANETS
+      summary: GetWithId - PLANETS
+      parameters:
+        - name: planetsId
+          in: path
+          description: ID de la planète
+          required: true
+          schema:
+            type: string
+          example: 63c7b5090248fc4c1d12dab9
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - PLANETS
+      summary: Put - PLANETS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  climate: arid
+                  surface_water: '1'
+                  name: Tatooine
+                  diameter: '10465'
+                  rotation_period: '23'
+                  terrain: desert
+                  gravity: 1 standard
+                  orbital_period: '304'
+                  population: '200000'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: planetsId
+          in: path
+          description: ID de la planète
+          required: true
+          schema:
+            type: string
+          example: 63c7b5090248fc4c1d12dab9
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - PLANETS
+      summary: Delete - PLANETS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /starships:
+    get:
+      tags:
+        - STARSHIPS
+      summary: GetAll - STARSHIPS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - STARSHIPS
+      summary: Post - STARSHIPS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  pilots: [ ]
+                  MGLT: '60'
+                  starship_class: corvetteeeddddd
+                  hyperdrive_rating: '2.0'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: { }
+  /starships/{starshipsId}:
+    get:
+      tags:
+        - STARSHIPS
+      summary: GetWithId - STARSHIPS
+      parameters:
+        - name: starshipsId
+          in: path
+          description: ID du vaisseau
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ea0248fc4c1d12db1e
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - STARSHIPS
+      summary: Delete - STARSHIPS
+      parameters:
+        - name: starshipsId
+          in: path
+          description: ID du vaisseau
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ea0248fc4c1d12db1e
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - STARSHIPS
+      summary: Put - STARSHIPS
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  pilots: []
+                  MGLT: '60'
+                  starship_class: corvetteeeddddd
+                  hyperdrive_rating: '2.0'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: starshipsId
+          in: path
+          description: ID du vaisseau
+          required: true
+          schema:
+            type: string
+          example: 63c7b5ea0248fc4c1d12db1e
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /species:
+    get:
+      tags:
+        - SPECIES
+      summary: GetAll - SPECIES
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - SPECIES
+      summary: Post - SPECIES
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  climate: arid
+                  surface_water: '1'
+                  name: Tatooine
+                  diameter: '10465'
+                  rotation_period: '23'
+                  terrain: desert
+                  gravity: 1 standard
+                  orbital_period: '304'
+                  population: '200000'
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: { }
+  /species/{speciesId}:
+    get:
+      tags:
+        - SPECIES
+      summary: GetWithId - SPECIES
+      parameters:
+        - name: speciesId
+          in: path
+          description: ID de l'espèce
+          required: true
+          schema:
+            type: string
+          example: 63c7b5150248fc4c1d12daf7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - SPECIES
+      summary: Put - SPECIES
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  people: []
+                  name: Tatooined
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: speciesId
+          in: path
+          description: ID de l'espèce
+          required: true
+          schema:
+            type: string
+          example: 63c7b5150248fc4c1d12daf7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - SPECIES
+      summary: Delete - SPECIES
+      parameters:
+        - name: speciesId
+          in: path
+          description: ID de l'espèce
+          required: true
+          schema:
+            type: string
+          example: 63c7b5150248fc4c1d12daf7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
