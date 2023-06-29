@@ -17,7 +17,7 @@ function parseEntryBody(requestBody) {
 exports.index = (req, res ) => {
     People.find((err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -37,7 +37,7 @@ exports.getById = (req, res ) => {
     }
     People.findById(id, (err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -55,7 +55,7 @@ exports.insert = async (req, res) => {
 
     try {
         const dataToSave = await newPeople.save();
-        res.status(200).json(dataToSave);
+        res.status(201).json(dataToSave);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -71,7 +71,7 @@ exports.update = async (req, res) => {
         if (!updatedPeople) {
             return res.status(404).json({message: 'People not found'});
         }
-        res.status(200).json(updatedPeople);
+        res.status(201).json(updatedPeople);
     } catch (error) {
         res.status(400).json({message: error.message});
     }
@@ -91,7 +91,7 @@ exports.delete = (req, res ) => {
         }
 
         if (!err) {
-            res.status(200).send(result)
+            res.status(201).send(result)
         } else {
             res.status(500).send(err)
         }

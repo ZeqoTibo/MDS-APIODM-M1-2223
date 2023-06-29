@@ -18,7 +18,7 @@ function parseEntryBody(requestBody) {
 exports.index = (req, res ) => {
     Species.find((err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -38,7 +38,7 @@ exports.getById = (req, res ) => {
     }
     Species.findById(id, (err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -56,7 +56,7 @@ exports.insert = async (req, res) => {
 
     try {
         const dataToSave = await newSpecies.save();
-        res.status(200).json(dataToSave);
+        res.status(201).json(dataToSave);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -71,7 +71,7 @@ exports.update = async (req, res) => {
         if (!updatedSpecies) {
             return res.status(404).json({message: 'Specie not found'});
         }
-        res.status(200).json(updatedSpecies);
+        res.status(201).json(updatedSpecies);
     } catch (error) {
         res.status(400).json({message: error.message});
     }
@@ -91,7 +91,7 @@ exports.delete = (req, res ) => {
         }
 
         if (!err) {
-            res.status(200).send(result)
+            res.status(201).send(result)
         } else {
             res.status(500).send(err)
         }

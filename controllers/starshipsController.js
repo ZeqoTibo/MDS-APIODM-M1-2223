@@ -17,7 +17,7 @@ function parseEntryBody(requestBody) {
 exports.index = (req, res ) => {
     Starships.find((err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -37,7 +37,7 @@ exports.getById = (req, res ) => {
     }
     Starships.findById(id, (err, docs) => {
         if (!err) {
-            res.status(200).send(docs)
+            res.status(201).send(docs)
         } else {
             res.status(500).send(err)
         }
@@ -54,7 +54,7 @@ exports.insert = async (req, res) => {
     const newStarship = new Starships(fields);
     try {
         const dataToSave = await newStarship.save();
-        res.status(200).json(dataToSave);
+        res.status(201).json(dataToSave);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -71,7 +71,7 @@ exports.update = async (req, res) => {
         if (!updatedStarship) {
             return res.status(404).json({message: 'Starship not found'});
         }
-        res.status(200).json(updatedStarship);
+        res.status(201).json(updatedStarship);
     } catch (error) {
         res.status(400).json({message: error.message});
     }
@@ -91,7 +91,7 @@ exports.delete = (req, res ) => {
         }
 
         if (!err) {
-            res.status(200).send(result)
+            res.status(201).send(result)
         } else {
             res.status(500).send(err)
         }
