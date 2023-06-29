@@ -1,0 +1,29 @@
+{
+  "name": "mds-apiodm-m1-2223",
+  "version": "1.0.0",
+  "description": "Réalisation d'un API sur Star Wars\r - Respect du modèle de Richardson\r - Respect des 5 règles du REST\r - Techs : node / express / mongo (mongoose obligatoire)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeqoTibo/MDS-APIODM-M1-2223.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeqoTibo/MDS-APIODM-M1-2223/issues"
+  },
+  "homepage": "https://github.com/ZeqoTibo/MDS-APIODM-M1-2223#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.0"
+  }
+}
